@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: rgb(45, 45, 45);
+            margin: 0;
+            color: white;
+        }
+        header{
+            background-color:  rgb(61, 61, 61);
+            display: flex;
+            justify-content: space-around;
+            align-items:center;
+            height: 100px;
+            width: 100%;
+            font-family: 'Bungee Spice', cursive;
+        }
+        header h1{
+            margin-top: 20;
+            padding-left: 70px;
+            font-size: 2em;
+            margin: 0;
+            display: inline;
+        }
+
+        header nav a{
+            font-size: 20px;
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            
+        }
+        footer{
+            background-color:  rgb(61, 61, 61);
+            height: 100px;
+            width: 100%;
+            text-align: center;
+            position:fixed;
+            bottom: 0;
+            left: 0;
+            font-family: 'Bungee Spice', cursive;
+        }
+
+        footer div{
+            padding-top: 10px;
+        }
+    </style>
+    <title>Create</title>
+</head>
+<body>
+
+    <header>
+        <h1 >Portal de Notícias</h1>
+        
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+    </header>
+
+    <section class="apresentacao">
+        <center>
+            <h2 id="titulo">Criar Notícia</h2>
+        </center>
+    </section>
+
+    <center>
+        <form method="POST" action="/noticias/add">
+            <fieldset>
+                <label for="publicacao">Publicação da Notícia</label>
+                <input type="date" name="publicacao" id="publicacao">
+                <br><br>
+
+                <label for="titulo_pricipal">Título</label>
+                <input type="text" name="titulo_pricipal" id="titulo_pricipal">
+                <br><br>
+
+                <label for="titulo_auxiliar">Título auxiliar</label>
+                <input type="text" name="titulo_auxiliar" id="titulo_auxiliar">
+                <br><br>
+
+                <label for="noticia">Notícia</label>
+                <input type="text" name="noticia" id="noticia">
+                <br><br>
+
+                <label for="primeiro_nome_autor">Primeiro Nome do Autor</label>
+                <input type="tetx" name="primeiro_nome_autor" id="primeiro_nome_autor">
+                <br><br>
+
+                <label for="sobrenome_autor">Sobrenome do Autor</label>
+                <input type="text" name="sobrenome_autor" id="sobrenome_autor">
+                <br><br>
+
+                <label for="fonte">Fonte</label>
+                <input type="text" name="fonte" id="fonte">
+                <br><br>
+
+                <button type="submit">Enviar</button>
+
+            </fieldset>
+        </form>
+    </center>
+
+    <footer id="footer">
+        <div>Email: portalnoticias@gmail.com</div>
+        <div>Fone:(11)99658-8585</div>
+    </footer>
+    
+</body>
+</html>

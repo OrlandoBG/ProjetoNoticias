@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body{
+            background-color: rgb(45, 45, 45);
+            margin: 0;
+            color: white;
+        }
+        header{
+            background-color:  rgb(61, 61, 61);
+            display: flex;
+            justify-content: space-around;
+            align-items:center;
+            height: 100px;
+            width: 100%;
+            font-family: 'Bungee Spice', cursive;
+        }
+        header h1{
+            margin-top: 20;
+            padding-left: 70px;
+            font-size: 2em;
+            margin: 0;
+            display: inline;
+        }
+
+        header nav a{
+            font-size: 20px;
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            
+        }
+
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .itens{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            height: 750px;
+            margin-left: 20px;
+            margin-right: 10px;
+            margin-top: 5px;
+            border: solid black;
+            padding: 5px;
+            background-color:  rgb(61, 61, 61);
+        }
+
+        .itens center{
+            font-family: 'Bungee Spice', cursive;
+        }
+
+        #atualizar{
+            color: yellow;
+            text-decoration: none;
+        }
+
+        #deletar{
+            color: red;
+            text-decoration: none;
+        }
+
+        .apresentacao{
+            font-size: 25px;
+        }
+        footer{
+            background-color:  rgb(61, 61, 61);
+            height: 100px;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            bottom: 0;
+            left: 0;
+            font-family: 'Bungee Spice', cursive;
+        }
+
+        footer div{
+            padding-top: 10px;
+        }
+        #titulo{
+            font-family:serif;
+        }
+
+    </style>
+    <title>Home</title>
+</head>
+<body>
+
+    <header>
+        <h1 >Portal de Notícias</h1>
+        
+        <nav>
+            <a href="/noticias/create">Inserir Notícia</a>
+        </nav>
+    </header>
+
+    <section class="apresentacao">
+        <center>
+            <h2 id="titulo">News</h2>
+        </center>
+    </section>
+    
+    <section class="main">
+        {% for item in noticias%}
+        <div class="itens">
+            <h5>Publicado em: {{item.publicacao}}</h3>
+            <center>
+                <h2>{{item.titulo_pricipal}}</h2>
+                <h3>{{item.titulo_auxiliar}}</h3>
+            </center>
+            <p>{{item.noticia}}</p>
+            <p>Autor: {{item.primeiro_nome_autor}} {{item.sobrenome_autor}}</p>
+            <p>Fonte: {{item.fonte}}</p>
+            <a id="atualizar" href="/noticias/update/{{item.id}}">Atualizar</a>
+            <a id="deletar" href="/noticias/delete/{{item.id}}">Deletar</a>
+        </div>
+        {% endfor %}
+    </section>
+
+    <footer id="footer">
+        <div>Email: portalnoticias@gmail.com</div>
+        <div>Fone:(11)99658-8585</div>
+    </footer>
+
+    
+</body>
+</html>
